@@ -53,7 +53,7 @@ packages = ["CorridorKeyModule", "gvm_core", "VideoMaMaInferenceModule"]
 [tool.ruff]
 target-version = "py310"
 line-length = 120
-exclude = ["gvm_core/", "VideoMaMaInferenceModule/"]
+extend-exclude = ["gvm_core/", "VideoMaMaInferenceModule/"]
 
 [tool.ruff.lint]
 select = ["E", "F", "W", "I", "B"]
