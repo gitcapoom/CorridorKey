@@ -26,4 +26,6 @@ jobs:
           context: .
           file: Dockerfile.runpod
           push: true
-          tags: ghcr.io/gitcapoom/corridorkey-runpod:latest
+          tags: |
+            ghcr.io/gitcapoom/corridorkey-runpod:latest
+            ghcr.io/gitcapoom/corridorkey-runpod:build-${{ github.run_number }}
