@@ -8,6 +8,8 @@ license = { text = "CC-BY-NC-SA-4.0" }
 authors = [{ name = "Corridor Digital" }]
 
 
+
+
 dependencies = [
     # Core inference
     "torch==2.7.1",
@@ -34,43 +36,3 @@ dependencies = [
     # VideoMaMa alpha hint generator
     "einops",
     # BiRefNet alpha hint generator
-    "kornia",
-    # CLI tools (huggingface-hub is also a transitive dep, but must be direct
-    # so that uv installs the "hf" console-script entry point)
-    "huggingface-hub",
-    # CLI framework + terminal output
-    "typer>=0.12",
-    "rich>=13",
-    # RunPod serverless handler + Google Drive
-    "runpod",
-    "google-api-python-client",
-    "google-auth",
-]
-
-
-[project.optional-dependencies]
-cuda = [
-    "torch==2.7.1",
-    "torchvision==0.22.1",
-]
-mlx = [
-    "corridorkey-mlx ; python_version >= '3.11'",
-]
-
-
-[dependency-groups]
-dev = ["pytest", "pytest-cov", "ruff", "hypothesis"]
-docs = ["zensical>=0.0.24"]
-
-
-[project.scripts]
-corridorkey = "corridorkey_cli:main"
-
-
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
-
-
-[tool.hatch.build.targets.wheel]
-packages = ["CorridorKeyModule", "gvm_core", "VideoMaMaInferenceModule"]
